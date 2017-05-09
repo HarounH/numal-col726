@@ -65,6 +65,16 @@ def main(nd=25, nt=25, rank=5):
 
 	plt.show()
 
+def query(dtm, term, cos_thresh=0.8):
+	ans = []
+	for d in range(0, len(dtm)):
+		s = 0
+		for i in range(0, len(term)):
+			s += d[i]*term[i]
+		if s>cos_thresh*(len(term)):
+			ans.append(dtm)
+	return ans
+
 if __name__ == '__main__':
 	options = CmdOptions()
 	if len(sys.argv)>1:
